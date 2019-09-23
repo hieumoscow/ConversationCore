@@ -29,12 +29,7 @@ namespace BeautifulRestApi
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApiDbContext>(options =>
-            {
-                // Use an in-memory database with a randomized database name (for testing)
-                options.UseInMemoryDatabase(Guid.NewGuid().ToString());
-            });
-
+            
             services.AddRouting(options => options.LowercaseUrls = true);
 
             // Register the Swagger generator, defining 1 or more Swagger documents
@@ -43,7 +38,13 @@ namespace BeautifulRestApi
                 c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
             });
 
-        services.AddMvc(opt =>
+            services.AddDbContext<ApiDbContext>(options =>
+            {
+                // Use an in-memory database with a randomized database name (for testing)
+                options.UseInMemoryDatabase("hieumemorydb");
+            });
+
+            services.AddMvc(opt =>
             {
                 opt.Filters.Add(typeof(LinkRewritingFilter));
             })
@@ -80,8 +81,10 @@ namespace BeautifulRestApi
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            var dbContext = app.ApplicationServices.GetRequiredService<ApiDbContext>();
-            AddTestData(dbContext);
+            using( var serviceScope = app.ApplicationServices.CreateScope()){
+                var dbContext = serviceScope.ServiceProvider.GetService<ApiDbContext>();
+                AddTestData(dbContext);
+            }
 
             // Serialize all exceptions to JSON
             var jsonExceptionMiddleware = new JsonExceptionMiddleware(
@@ -124,6 +127,7 @@ namespace BeautifulRestApi
                 Conversation = conv2,
                 Body = "idk yet. something w/ the Infinity Stones?"
             });
+
 
             context.SaveChanges();
         }
