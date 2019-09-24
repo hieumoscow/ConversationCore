@@ -1,0 +1,13 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "value": "hieuconvapim-dev"
+    },
+    "LinkedTemplatesBaseUrl": {
+      "value": "https://conversationcoreblob.blob.core.windows.net/armartifacts"
+    }
+  },
+  "resources": []
+}

@@ -1,0 +1,34 @@
+version: 0.0.1   # Required
+apimServiceName: hieuconvapim-dev   # Required, must match name of an apim service deployed in the specified resource group
+apiVersionSets:   # Optional
+    - id: myVersionSetID
+      displayName: myAPIVersionSet
+      description: a description
+      versioningScheme: Query
+      versionQueryName: versionQuery
+      versionHeaderName: versionHeader
+apis:
+  - name: HieuConv   # Required
+    openApiSpec: https://conversationcore.azurewebsites.net/swagger/v1/swagger.json    # Required, can be url or local file
+    #openApiSpec: https://petstore.swagger.io/v2/swagger.json
+    policy: /Users/hieunhu/github/ConversationCore/hieuconvAPIM-DEV/apiPolicyHeaders.xml   # Optional, can be url or local file
+    suffix: hieuconv   # Required
+    apiVersion: v1   # Optional
+    apiVersionDescription: My first version   # Optional 
+    apiVersionSetId: myVersionSetID
+    revision: 1   # Optional
+    revisionDescription: My first revision   # Optional
+    operations:   # Optional
+      GetCommentsAsync: # Must match the operationId property of a path's operations
+        policy: /Users/hieunhu/github/ConversationCore/hieuconvAPIM-DEV/api-policy.xml   # Optional, can be url or local file
+      GetCommentByIdAsync:  # Must match the operationId property of a path's operations
+        policy: /Users/hieunhu/github/ConversationCore/hieuconvAPIM-DEV/api-policy.xml   # Optional, can be url or local file
+    authenticationSettings:   # Optional
+      subscriptionKeyRequired: false
+      #oAuth2:
+      #    authorizationServerId: apimgmtaad
+      #    scope: scope
+    products: starter    # Optional, adds api to the specified products
+outputLocation: /Users/hieunhu/github/ConversationCore/templates/hieuconv-api   # Required, folder the creator will write the templates to
+linked: true   # Optional
+linkedTemplatesBaseUrl : https://conversationcoreblob.blob.core.windows.net/armartifacts  # Required if 'linked' property is set to true
