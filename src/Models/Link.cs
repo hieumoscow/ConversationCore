@@ -52,7 +52,7 @@ namespace BeautifulRestApi.Models
         /// Gets or sets the method used when following the link.
         /// </summary>
         /// <value>The method used when following the link.</value>
-        [JsonProperty(Order = -3, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty(Order = -3, NullValueHandling = NullValueHandling.Ignore, DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(GetMethod)]
         public string Method { get; set; }
 
