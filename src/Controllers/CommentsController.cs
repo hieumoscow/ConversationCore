@@ -44,7 +44,7 @@ namespace BeautifulRestApi.Controllers
             return Ok(collection);
         }
 
-        [HttpGet("{commentId}", Name = nameof(GetCommentByIdAsync))]
+        [HttpGet("{CommentId}", Name = nameof(GetCommentByIdAsync))]
         [ValidateModel]
         public async Task<IActionResult> GetCommentByIdAsync(GetCommentByIdParameters parameters, CancellationToken ct)
         {

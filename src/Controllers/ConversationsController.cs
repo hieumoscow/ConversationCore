@@ -48,7 +48,7 @@ namespace BeautifulRestApi.Controllers
             return Ok(collection);
         }
 
-        [HttpGet("{conversationId}", Name = nameof(GetConversationByIdAsync))]
+        [HttpGet("{ConversationId}", Name = nameof(GetConversationByIdAsync))]
         [ValidateModel]
         public async Task<IActionResult> GetConversationByIdAsync(GetConversationByIdParameters parameters, CancellationToken ct)
         {
@@ -60,7 +60,7 @@ namespace BeautifulRestApi.Controllers
             return Ok(conversation);
         }
 
-        [HttpGet("{conversationId}/comments", Name = nameof(GetConversationCommentsByIdAsync))]
+        [HttpGet("{ConversationId}/comments", Name = nameof(GetConversationCommentsByIdAsync))]
         [ValidateModel]
         public async Task<IActionResult> GetConversationCommentsByIdAsync(
             GetConversationByIdParameters parameters,

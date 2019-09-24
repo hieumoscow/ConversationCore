@@ -322,7 +322,7 @@ public class GetConversationByIdParameters
 Instead of defining the parameters directly in the method signature, like this:
 
 ```csharp
-[HttpGet("{conversationId}", Name = nameof(GetConversationByIdAsync))]
+[HttpGet("{ConversationId}", Name = nameof(GetConversationByIdAsync))]
 public async Task<IActionResult> GetConversationByIdAsync(
     Guid conversationId,
     CancellationToken ct)
@@ -331,7 +331,7 @@ public async Task<IActionResult> GetConversationByIdAsync(
 The method signature contains the POCO itself:
 
 ```csharp
-[HttpGet("{conversationId}", Name = nameof(GetConversationByIdAsync))]
+[HttpGet("{ConversationId}", Name = nameof(GetConversationByIdAsync))]
 public async Task<IActionResult> GetConversationByIdAsync(
     GetConversationByIdParameters parameters,
     CancellationToken ct)
