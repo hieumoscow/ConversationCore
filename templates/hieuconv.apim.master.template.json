@@ -21,7 +21,7 @@
             "properties": {
               "mode": "Incremental",
               "templateLink": {
-                 "uri":"[concat(parameters('LinkedTemplatesBaseUrl'), '/hieuconv-api/hieuconvapim-dev-master.template.json?sp=racwdl&st=2019-09-23T07:57:11Z&se=2020-09-30T07:57:00Z&sv=2018-03-28&sig=0nf5op4DQdOhAlxtqixFBpDJIFDu8m4A6zfzQjabfQw%3D&sr=c')]",
+                 "uri":"[concat(parameters('LinkedTemplatesBaseUrl'), '/hieuconv-api/hieuconvapim-dev-master.template.json')]",
                  "contentVersion":"1.0.0.0"
               },
               "parameters": {
