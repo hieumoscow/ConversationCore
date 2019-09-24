@@ -35,7 +35,7 @@
             "properties": {
               "mode": "Incremental",
               "templateLink": {
-                 "uri":"[concat(parameters('repoBaseUrl'), '/hieuconv-api/hieuconvapim-dev-master.template.json')]",
+                 "uri":"[concat(parameters('LinkedTemplatesBaseUrl'), '/hieuconv-api/hieuconvapim-dev-master.template.json')]",
                  "contentVersion":"1.0.0.0"
               },
               "parameters": {
