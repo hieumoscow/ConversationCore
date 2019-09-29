@@ -5,6 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Docker: Launch .NET Core (Preview)",
+            "type": "docker-coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "dockerBuild": {},
+            "dockerRun": {}
+        },
+        {
             "name": ".NET Core Launch (web)",
             "type": "coreclr",
             "request": "launch",
