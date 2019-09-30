@@ -1,0 +1,364 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "v1",
+      "title": "My API"
+    },
+    "paths": {
+      "/comments": {
+        "get": {
+          "tags": [
+            "Comments"
+          ],
+          "operationId": "GetCommentsAsync",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Offset",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32",
+              "maximum": 2147483647.0,
+              "minimum": 1.0
+            },
+            {
+              "name": "Limit",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32",
+              "maximum": 100.0,
+              "minimum": 1.0
+            },
+            {
+              "name": "IsCancellationRequested",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            },
+            {
+              "name": "CanBeCanceled",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            },
+            {
+              "name": "WaitHandle.Handle",
+              "in": "query",
+              "required": false,
+              "type": "object"
+            },
+            {
+              "name": "WaitHandle.SafeWaitHandle.IsInvalid",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            },
+            {
+              "name": "WaitHandle.SafeWaitHandle.IsClosed",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/comments/{commentId}": {
+        "get": {
+          "tags": [
+            "Comments"
+          ],
+          "operationId": "GetCommentByIdAsync",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "CommentId",
+              "in": "path",
+              "required": true,
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "name": "IsCancellationRequested",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            },
+            {
+              "name": "CanBeCanceled",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            },
+            {
+              "name": "WaitHandle.Handle",
+              "in": "query",
+              "required": false,
+              "type": "object"
+            },
+            {
+              "name": "WaitHandle.SafeWaitHandle.IsInvalid",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            },
+            {
+              "name": "WaitHandle.SafeWaitHandle.IsClosed",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/conversations": {
+        "get": {
+          "tags": [
+            "Conversations"
+          ],
+          "operationId": "GetConversationsAsync",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "Offset",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32",
+              "maximum": 2147483647.0,
+              "minimum": 1.0
+            },
+            {
+              "name": "Limit",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32",
+              "maximum": 100.0,
+              "minimum": 1.0
+            },
+            {
+              "name": "IsCancellationRequested",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            },
+            {
+              "name": "CanBeCanceled",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            },
+            {
+              "name": "WaitHandle.Handle",
+              "in": "query",
+              "required": false,
+              "type": "object"
+            },
+            {
+              "name": "WaitHandle.SafeWaitHandle.IsInvalid",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            },
+            {
+              "name": "WaitHandle.SafeWaitHandle.IsClosed",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/conversations/{conversationId}": {
+        "get": {
+          "tags": [
+            "Conversations"
+          ],
+          "operationId": "GetConversationByIdAsync",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "ConversationId",
+              "in": "path",
+              "required": true,
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "name": "IsCancellationRequested",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            },
+            {
+              "name": "CanBeCanceled",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            },
+            {
+              "name": "WaitHandle.Handle",
+              "in": "query",
+              "required": false,
+              "type": "object"
+            },
+            {
+              "name": "WaitHandle.SafeWaitHandle.IsInvalid",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            },
+            {
+              "name": "WaitHandle.SafeWaitHandle.IsClosed",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/conversations/{conversationId}/comments": {
+        "get": {
+          "tags": [
+            "Conversations"
+          ],
+          "operationId": "GetConversationCommentsByIdAsync",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            {
+              "name": "ConversationId",
+              "in": "path",
+              "required": true,
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "name": "Offset",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32",
+              "maximum": 2147483647.0,
+              "minimum": 1.0
+            },
+            {
+              "name": "Limit",
+              "in": "query",
+              "required": false,
+              "type": "integer",
+              "format": "int32",
+              "maximum": 100.0,
+              "minimum": 1.0
+            },
+            {
+              "name": "IsCancellationRequested",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            },
+            {
+              "name": "CanBeCanceled",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            },
+            {
+              "name": "WaitHandle.Handle",
+              "in": "query",
+              "required": false,
+              "type": "object"
+            },
+            {
+              "name": "WaitHandle.SafeWaitHandle.IsInvalid",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            },
+            {
+              "name": "WaitHandle.SafeWaitHandle.IsClosed",
+              "in": "query",
+              "required": false,
+              "type": "boolean"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/": {
+        "get": {
+          "tags": [
+            "Root"
+          ],
+          "operationId": "GetRoot",
+          "consumes": [
+            
+          ],
+          "produces": [
+            
+          ],
+          "parameters": [
+            
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      
+    }
+  }

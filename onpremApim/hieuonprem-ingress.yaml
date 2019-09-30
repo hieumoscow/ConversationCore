@@ -1,0 +1,67 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hieuonprem-ingress
+spec:
+  rules:
+  - host: zbank.52.163.222.39.nip.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: hieuonprem
+          servicePort: 80
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: hieuonprem-token
+type: Opaque
+stringData:
+  value: "GatewayKey hieuonprem&201910290923&A1BXKHXRgDuKcdQD9WEHEdZxBwj5qk+a8+iOTtglkqKiAcj/NKXL/j5884GikGh1Y2LiC8/HVs0Adg+0LFDgNA=="
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hieuonprem
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hieuonprem
+  template:
+    metadata:
+      labels:
+        app: hieuonprem
+    spec:
+      dnsPolicy: Default
+      containers:
+      - name: hieuonprem
+        image: mcr.microsoft.com/azure-api-management/gateway:alpha
+        ports:
+        - name: http
+          containerPort: 80
+        - name: https
+          containerPort: 443
+        env:
+        - name: config.service.endpoint
+          value: "https://hieu.management.azure-api.net/subscriptions/122b8000-f910-48c4-899a-845d36600f10/resourceGroups/feedback/providers/Microsoft.ApiManagement/service/hieu?api-version=2018-06-01-preview"
+        - name: config.service.auth
+          valueFrom:
+            secretKeyRef:
+              name: hieuonprem-token
+              key: value
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hieuonprem
+spec:
+  type: ClusterIP
+  ports:
+  - name: http
+    port: 80
+  - name: https
+    port: 443
+  selector:
+    app: hieuonprem
