@@ -15,7 +15,7 @@ apis:
     suffix: hieuconv   # Required
     apiVersion: v1   # Optional
     apiVersionDescription: My first version   # Optional 
-    apiVersionSetId: myVersionSetID
+    apiVersionSetId: HieuConvV1
     revision: 1   # Optional
     revisionDescription: My first revision   # Optional
     operations:   # Optional
