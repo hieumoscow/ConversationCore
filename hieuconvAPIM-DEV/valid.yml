@@ -1,9 +1,9 @@
 version: 0.0.1   # Required
-apimServiceName: hieuconvapim-dev   # Required, must match name of an apim service deployed in the specified resource group
+apimServiceName: zbank-dev   # Required, must match name of an apim service deployed in the specified resource group
 apiVersionSets:   # Optional
-    - id: myVersionSetID
-      displayName: myAPIVersionSet
-      description: a description
+    - id: HieuConvV1
+      displayName: HieuConvV1
+      description: HieuConvV1
       versioningScheme: Query
       versionQueryName: versionQuery
       versionHeaderName: versionHeader
