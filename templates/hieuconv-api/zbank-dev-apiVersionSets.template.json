@@ -9,13 +9,13 @@
   "resources": [
     {
       "properties": {
-        "displayName": "myAPIVersionSet",
-        "description": "a description",
+        "displayName": "HieuConvV1",
+        "description": "HieuConvV1",
         "versionQueryName": "versionQuery",
         "versionHeaderName": "versionHeader",
         "versioningScheme": "Query"
       },
-      "name": "[concat(parameters('ApimServiceName'), '/myVersionSetID')]",
+      "name": "[concat(parameters('ApimServiceName'), '/HieuConvV1')]",
       "type": "Microsoft.ApiManagement/service/apiVersionSets",
       "apiVersion": "2019-01-01",
       "dependsOn": []

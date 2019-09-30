@@ -20,7 +20,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/hieuconvapim-dev-apiVersionSets.template.json')]",
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/zbank-dev-apiVersionSets.template.json')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
@@ -38,7 +38,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/hieuconvapim-dev-HieuConv-initial.api.template.json')]",
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/zbank-dev-HieuConv-initial.api.template.json')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
@@ -58,7 +58,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/hieuconvapim-dev-HieuConv-subsequent.api.template.json')]",
+          "uri": "[concat(parameters('LinkedTemplatesBaseUrl'), '/zbank-dev-HieuConv-subsequent.api.template.json')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
