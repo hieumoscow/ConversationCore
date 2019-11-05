@@ -19,7 +19,7 @@ steps:
 
 - task: AzureKeyVault@1
   inputs:
-    azureSubscription: 'Microsoft Azure Internal Consumption (122b8000-f910-48c4-899a-845d36600f10)'
+    azureSubscription: 'keyvault'
     KeyVaultName: 'hieudevopskeyvault'
     SecretsFilter: '*'
 
