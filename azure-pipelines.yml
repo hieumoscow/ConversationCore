@@ -11,3 +11,6 @@ pool:
 
 steps:
 
+
+- script: echo $(testsecret)
+  displayName: 'Run a one-line script. Current Pipeline'
