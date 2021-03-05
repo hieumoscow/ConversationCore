@@ -4,7 +4,7 @@ metadata:
   name: hieuonprem-ingress
 spec:
   rules:
-  - host: zbank.52.163.222.39.nip.io
+  - host: kubeconapim.168.63.236.59.nip.io
     http:
       paths:
       - path: /
@@ -18,7 +18,7 @@ metadata:
   name: hieuonprem-token
 type: Opaque
 stringData:
-  value: "GatewayKey hieuonprem&201910290923&A1BXKHXRgDuKcdQD9WEHEdZxBwj5qk+a8+iOTtglkqKiAcj/NKXL/j5884GikGh1Y2LiC8/HVs0Adg+0LFDgNA=="
+  value: "GatewayKey hieuonprem&202001071320&WaQvPACiLnsjfjMEZVv8UH8uDpfyfO3LGswVtX9dJYF1cFFsjCL1g2tJC8vNNkveM9gDonXINLA4kS4ugsCu5w=="
 ---
 apiVersion: apps/v1
 kind: Deployment
